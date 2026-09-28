@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLD Practice Platform</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>LLD Practice Platform</h1>
+    <p>Practice Low-Level Design, submit solutions, and get feedback</p>
+  </header>
+
+  <main id="app">
+    <section id="problems-section" class="section active">
+      <h2>Choose a Problem</h2>
+      <div class="problems-grid" id="problems-grid"></div>
+    </section>
+
+    <section id="attempt-section" class="section">
+      <div class="attempt-header">
+        <button id="back-to-problems" class="btn btn-secondary">&larr; Back to Problems</button>
+        <h2 id="attempt-problem-title"></h2>
+      </div>
+
+      <div class="problem-details" id="problem-details"></div>
+
+      <div class="solution-editor">
+        <ul class="tabs">
+          <li><a href="#solution-tab" class="tab-link active" data-tab="solution-tab">Solution</a></li>
+          <li><a href="#explanation-tab" class="tab-link" data-tab="explanation-tab">Explanation</a></li>
+          <li><a href="#feedback-tab" class="tab-link" data-tab="feedback-tab" id="feedback-tab-link" style="display:none;">Feedback</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="solution-tab" class="tab-pane active">
+            <textarea id="solution-content" placeholder="Write your solution here (class diagrams, code, text...)" rows="20"></textarea>
+          </div>
+          <div id="explanation-tab" class="tab-pane">
+            <textarea id="solution-explanation" placeholder="Explain your design decisions, trade-offs, and approach..." rows="15"></textarea>
+          </div>
+          <div id="feedback-tab" class="tab-pane">
+            <div id="feedback-content"></div>
+          </div>
+        </div>
+
+        <div class="attempt-actions">
+          <button id="save-draft-btn" class="btn btn-secondary">Save Draft</button>
+          <button id="submit-btn" class="btn btn-primary" style="display:none;">Submit for Feedback</button>
+          <button id="get-feedback-btn" class="btn btn-success" style="display:none;">Get Feedback</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="history-section" class="section">
+      <h2>Past Attempts</h2>
+      <div id="history-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>LLD Practice Platform &middot; A CipherSchools Assignment Prototype</p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
